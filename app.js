@@ -1,10 +1,17 @@
 // Import necessary modules
+const express = require('express');
+const dotenv = require('dotenv');
+const movies = require('movies.js');
 
 // Initialize express server
+const app = express();
 
 // Inject environment variables
+dotenv.config();
 
 // Define the `PORT` and `PROGRAM_NAME` variables
+const PORT = process.env.PORT || 4001;
+const PROGRAM_NAME = process.env.PROGRAM_NAME || 'Movie App';
 
 // Callback functions
 const getAllMovies = (req, res, next) => {
